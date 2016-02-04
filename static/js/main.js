@@ -1,7 +1,6 @@
 $(function() {
-
 	var KYZN = function() {
-
+		var gameStarted = 0;
 		var timeouts = function() {
 			// Animation
 			setTimeout(function() {
@@ -121,8 +120,10 @@ $(function() {
 
 			$(window).on('keypress', function(e) {
 				console.log(e.which);
-				if (e.which == "13") 
+				if ( e.which == "13" && !gameStarted ) {
+					gameStarted = 1;
 					startTheGame();
+				} 
 			});
 		},
 
